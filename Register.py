@@ -108,7 +108,25 @@ pas.pack()
 
 gap(1)
 Submit = Button(win, text="SUBMIT", font=("Consolas", 10, 'bold'), bg="white", fg="black",
-                relief=FLAT, width=10, command=submit)
+                relief=FLAT, width=10, command=submit,activebackground='White')
 Submit.pack()
+
+def login():
+    win.destroy()
+    import Login
+    
+def on_enter(e):
+    log['foreground'] = '#0092ff'
+
+def on_leave(e):
+    log['foreground'] = 'White'
+    
+gap(1)
+log = Button(win,text="Already Have An Account?",bg=color,fg="White",relief=FLAT
+             ,activebackground=color,activeforeground="White",borderwidth=0,command=login)
+log.pack()
+
+log.bind("<Enter>", on_enter)
+log.bind("<Leave>", on_leave)
 
 win.mainloop()
