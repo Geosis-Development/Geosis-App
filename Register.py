@@ -25,13 +25,17 @@ def gap(j):
     for i in range(j):
         Label(win, text=" ", bg=color).pack()
 
-def is_valid_email(email):
+def valid_email(email):
     email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$'
     return re.match(email_pattern, email)
 
-def is_valid_phone(phone):
+def valid_phone(phone):
     phone_pattern = r'^\d{10}$'
     return re.match(phone_pattern, phone)
+
+def valid_name(name):
+    name_pattern = r'^[a-zA-Z]+$'
+    return re.match(name_pattern, name)
 
 def submit():
     a = name.get()
@@ -42,12 +46,16 @@ def submit():
     if not (a and b and c and d):
         messagebox.showerror("Error", "Please Fill All The Fields.")
         return
-
-    if not is_valid_email(b):
+    
+    if not valid_name(a):
+        messagebox.showerror("Error", "Please Enter A Valid Name With Only Alphabetic Characters.")
+        return
+    
+    if not valid_email(b):
         messagebox.showerror("Error", "Please Enter A Valid Email Address.")
         return
 
-    if not is_valid_phone(c):
+    if not valid_phone(c):
         messagebox.showerror("Error", "Please Enter A Valid 10-Digit Phone Number.")
         return
 
