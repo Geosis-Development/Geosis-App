@@ -1,10 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Aug 19 16:35:57 2023
-
-@author: Akshit
-"""
-
+#Touch mat kr thoda karke choda hu, class jana he
 import mysql.connector
 from tkinter import *
 from tkinter import messagebox
