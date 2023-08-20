@@ -63,7 +63,10 @@ def on_enter(e):
 
 def on_leave(e):
     log['foreground'] = 'White'
-    
+
+def register():
+    win.destroy
+    import register
 gap(1)
 log = Button(win,text="Don't Have An Account?",bg=color,fg="White",relief=FLAT
              ,activebackground=color,activeforeground="White",borderwidth=0,command=login)
